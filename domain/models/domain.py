@@ -5,4 +5,5 @@ class Domain(models.Model):
     _description = "List of domains"
 
     name = fields.Char(string = "Title", required=True)
-    active = fields.Boolean(string="Active", default=True) 
+    active = fields.Boolean(string="Active", default=True)
+    description = fields.Char(string= "description")
