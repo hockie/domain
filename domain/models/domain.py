@@ -7,3 +7,4 @@ class Domain(models.Model):
     name = fields.Char(string = "Title", required=True)
     active = fields.Boolean(string="Active", default=True)
     description = fields.Char(string= "description")
+    email = fields.Char(string="Email")
