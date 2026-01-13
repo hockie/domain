@@ -1,0 +1,1396 @@
+<data>
+  <xpath expr="//form/sheet/div[2]/div[1]/h2" position="inside">
+    <field name="x_position_title"/>
+  </xpath>
+  <xpath expr="//form[1]/field[1]" position="after">
+    <field name="x_start_date" invisible="True"/>
+  </xpath>
+  <xpath expr="//field[@name='x_age']" position="replace"/>
+  <xpath expr="//form[1]/sheet[1]/div[@name='button_box']/button[@name='studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9'][2]" position="after">
+    <button class="oe_stat_button" icon="fa-check-square-o" type="action" name="studio_customization.questions_c1599b6c-2379-4207-a9e2-bbb8338491d2">
+      <field widget="statinfo" name="x_x_employee_id_x_questions_count" string="Questions"/>
+    </button>
+  </xpath>
+  <xpath expr="//field[@name='job_title']" position="attributes">
+    <attribute name="placeholder">Position Title</attribute>
+    <attribute name="string">Position Title</attribute>
+  </xpath>
+  <!-- <field name="job_title" position="after">
+    <field name="x_position_title"/>
+  </field>-->
+  <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='department_id']" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/field[@name='job_id']" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+    <attribute name="domain">["&amp;", ("employee_ids", "=", False), ("department_id", "=", department_id)]</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='country_of_birth']" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='gender']" position="attributes">
+    <attribute name="string">Sex</attribute>
+  </xpath>
+  <xpath expr="//page[@name='family']" position="attributes">
+    <attribute name="groups">hr.group_hr_user,hr.group_hr_manager</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='family']/group[@name='family_background']/group[@name='children_information']/field[@name='x_children_information_ids']/list[1]/field[@name='x_employee_id']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_birthday']" position="attributes">
+    <attribute name="options">{"warn_future":true}</attribute>
+  </xpath>
+  <xpath expr="//page[@name='education']" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='education']/group[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='education']/group[1]/group[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='education']/group[1]/group[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='education']/group[1]" position="after">
+    <field name="x_educational_background_ids">
+      <list string="Educational Background" editable="bottom">
+        <field name="x_employee_id" optional="show" column_invisible="True"/>
+        <field name="x_educational_level" optional="show"/>
+        <field name="x_school" optional="show"/>
+        <field name="x_name"/>
+        <field name="x_date_from" optional="show" widget="date" string="From"/>
+        <field name="x_date_to" optional="show" widget="date" string="To"/>
+        <field name="x_highest_level" optional="show" string="Highest Level/Units Earned (if not graduated)"/>
+        <field name="x_year_graduated" optional="show"/>
+        <field name="x_honors_received" optional="show" string="Scholarship/Academic Honors Received"/>
+      </list>
+    </field>
+  </xpath>
+  <xpath expr="//page[@name='eligibility']" position="attributes">
+    <attribute name="groups">hr.group_hr_manager,hr.group_hr_user</attribute>
+    <attribute name="string">CIVIL SERVICE ELIGIBILITY</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='eligibility']/group[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='eligibility']/group[1]" position="after">
+    <field name="x_civil_service_eligibility_2_ids" width="auto">
+      <list string="Civil Service Eligibility" editable="bottom">
+        <field name="x_employee_id" optional="show" column_invisible="True" invisible="False"/>
+        <field name="x_civil_service_eligibility_id" optional="show" width="auto" options="{&quot;no_open&quot;:true,&quot;no_create&quot;:true}" string="Civil Service Eligibility"/>
+        <field name="x_name" column_invisible="True" invisible="False"/>
+        <field name="x_rating" optional="show" width="auto"/>
+        <field name="x_date_of_exam" optional="show" width="auto"/>
+        <field name="x_place_of_exam" optional="show" width="auto"/>
+        <field name="x_license_number" optional="show" width="auto"/>
+        <field name="x_date_of_validity" optional="show" width="auto"/>
+      </list>
+    </field>
+  </xpath>
+  <xpath expr="//field[@name='x_currency_id']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+    <attribute name="context">{'default_currency':'PHP'}</attribute>
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_company']" position="attributes">
+    <attribute name="string">Dept/Agency/Office/Company</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_is_govt_service']" position="attributes">
+    <attribute name="options">{"horizontal":true}</attribute>
+    <attribute name="string">Government (Y/N)</attribute>
+  </xpath>
+  <xpath expr="//page[@name='studio_page_99t_1i8n3i2iv']" position="attributes">
+    <attribute name="groups">hr.group_hr_manager,hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_99t']" position="after">
+    <field name="x_voluntary_work_ids">
+      <list string="Voluntary Work" editable="top" default_order="x_date_from_2 asc">
+        <field name="x_employee_id" optional="show" column_invisible="True"/>
+        <field name="x_name" width="auto"/>
+        <field name="x_date_from_2" optional="show" string="From" width="auto"/>
+        <field name="x_date_to_2" optional="show" string="To" width="auto"/>
+        <field name="x_number_hours" optional="show" width="auto"/>
+        <field name="x_nature_work" optional="show" width="auto"/>
+      </list>
+    </field>
+  </xpath>
+  <xpath expr="//page[@name='ratings']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_start_date']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_ratings']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//page[@name='learning_development']" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+    <attribute name="string">L&amp;D / TRAINING PROGRAMS</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='learning_development']/field[@name='x_learning_and_development_ids']/list[1]/field[@name='x_date_from']" position="attributes">
+    <attribute name="options">{"end_date_field":"x_date_to","show_time":false}</attribute>
+    <attribute name="widget">daterange</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='learning_development']/field[@name='x_learning_and_development_ids']/list[1]/field[@name='x_date_to']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_date_of_appointment']" position="before">
+    <xpath expr="//field[@name='x_years_service']" position="move"/>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_1pm']" position="after">
+    <field name="x_other_informations_ids">
+      <list string="Other Information" editable="bottom">
+        <field name="x_employee_id" optional="show" options="{&quot;no_open&quot;:false}" column_invisible="True"/>
+        <field name="x_name"/>
+        <field name="x_non_academic_recognition" optional="show"/>
+        <field name="x_memberships" optional="show"/>
+      </list>
+    </field>
+  </xpath>
+  <xpath expr="//field[@name='x_question_id']" position="attributes">
+    <attribute name="widget">portal_wizard_user_one2many</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[@name='studio_notebook_61k_1i8n3et9b']/page[@name='studio_page_306_1i8n3oaon']/group[@name='studio_group_306']/group[@name='studio_group_306_left']/field[@name='x_question_id']/list[1]/field[@name='x_employee_id']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[@name='studio_notebook_61k_1i8n3et9b']/page[@name='studio_page_306_1i8n3oaon']/group[@name='studio_group_306']/group[@name='studio_group_306_left']/field[@name='x_question_id']/list[1]/field[@name='x_question_34_a']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_question_34_b']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//group[@name='studio_group_306_right']" position="inside">
+    <field name="x_question_34_a"/>
+    <field name="x_question_employee_id" context="{'default_id':1005}"/>
+  </xpath>
+  <xpath expr="//field[@name='x_years_service']" position="attributes">
+    <attribute name="invisible">not x_date_of_appointment</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]/group[1]/group[2]" position="replace"/>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]/group[1]/group[1]/field[1]" position="replace"/>
+  <xpath expr="//div[contains(@class,'oe_button_box')][not(ancestor::field)]" position="inside">
+    <button class="oe_stat_button" icon="fa-group" type="action" name="studio_customization.references_325eaf28-8e8c-43d7-8fec-337208681c35">
+      <field widget="statinfo" name="x_x_employee_id_x_references_count" string="References"/>
+    </button>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[9]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[9]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[7]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[1]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="after">
+    <field name="x_position_title"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[2]/div[1]/h2[1]/field[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[1]" position="before">
+    <field name="x_age"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[5]" position="after">
+    <field name="x_salary_grade"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[11]" position="after">
+    <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[6]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[11]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[9]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[9]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[5]" position="before">
+    <field name="x_change_button"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="before">
+    <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[5]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[3]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="widget">boolean_toggle</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button == True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">x_change_button == True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="string">Update Plantilla</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">user_id not in [6, 9]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="//div[contains(@class,'oe_button_box')][not(ancestor::field)]" position="inside">
+    <button class="oe_stat_button" icon="fa-server" type="action" name="studio_customization.service_record_39676137-4c0f-4655-bba9-62565180600d">
+      <field widget="statinfo" name="x_employee_id_hr_resume_line_count" string="Service Record"/>
+    </button>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="options">{"warn_future":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="options">{"warn_future":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[5]" position="before">
+    <field name="x_full_name"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[2]/div[1]/h1[1]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]//field[@name='x_name']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]/field[1]/list[1]//field[@name='x_name']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[8]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[7]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[9]" position="after">
+    <field name="x_same_address"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[10]" position="attributes">
+    <attribute name="widget">boolean_toggle</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[10]" position="attributes">
+    <attribute name="string">Same with Permanent Address</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[2]/div[1]/h1[1]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[2]/div[1]/h1[1]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[5]" position="replace"/>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[2]" position="after">
+    <field name="x_department" invisible="1"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="string">Career Service Eligibility</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/list[1]//field[@name='x_civil_service_eligibility_id']" position="attributes">
+    <attribute name="string">Career Service Eligibility</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[8]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="options">{"no_open":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="help">CAREER SERVICE/RA 1080(BOARD/BAR) UNDER SPECIAL LAWS CES/CSEE BARANGAY ELIGIBILITY/DRIVER'S LICENSE</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="string">Career Service/RA 1080(Board/Bar)/</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="string">Career Service/RA 1080(Board/Bar)/CSEE Barangay/</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="string">Career Service/RA 1080(Board/Bar)/CSEE Barangay/Driver's License</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="attributes">
+    <attribute name="string">Career Service Eligibility</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/list[1]//field[@name='x_civil_service_eligibility_id']" position="attributes">
+    <attribute name="string">Career Service/RA 1080(Board/Bar)/CSEE Barangay/Driver's License</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/list[1]//field[@name='x_civil_service_eligibility_id']" position="attributes">
+    <attribute name="help">Career Service/RA 1080(Board/Bar)/CSEE Barangay/Driver's License</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/list[1]" position="attributes">
+    <attribute name="editable"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]" position="inside">
+    <form>
+      <sheet string="Civil Service Eligibility">
+        <group>
+          <group>
+            <field name="x_employee_id" on_change="1" can_create="True" can_write="True"/>
+            <field name="x_studio_department"/>
+            <field name="x_civil_service_eligibility_id" on_change="1" can_create="True" can_write="True"/>
+            <field name="x_date_of_exam"/>
+            <field name="x_place_of_exam"/>
+            <field name="x_rating"/>
+          </group>
+          <group>
+            <field name="x_name" invisible="True"/>
+            <field name="x_license_number"/>
+            <field name="x_date_of_validity"/>
+            <field name="x_remarks"/>
+          </group>
+        </group>
+        <group>
+          <separator/>
+        </group>
+      </sheet>
+    </form>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_date_of_validity']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_employee_id']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_employee_id']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_studio_department']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_civil_service_eligibility_id']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_rating']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_civil_service_eligibility_id']" position="after">
+    <field name="x_ra_1080"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_ra_1080']" position="attributes">
+    <attribute name="widget">radio</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_ra_1080']" position="attributes">
+    <attribute name="options">{"horizontal":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_ra_1080']" position="attributes">
+    <attribute name="invisible">x_civil_service_eligibility_id not in [14]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_studio_department']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_ra_1080']" position="attributes">
+    <attribute name="required">x_civil_service_eligibility_id == 14</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]/div[1]/div[1]/group[3]/field[1]" position="attributes">
+    <attribute name="options">{"no_edit":true,"no_create":true,"no_open":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]/div[1]/div[1]/group[3]/field[1]" position="attributes">
+    <attribute name="options">{"no_edit":true,"no_create":false,"no_open":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[7]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='gender']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="invisible">x_educational_attainment not in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="required">x_educational_attainment in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_name']" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]//field[@name='x_name']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]" position="inside">
+    <form>
+      <sheet string="Educational Background">
+        <group>
+          <group>
+            <field name="x_highest_level"/>
+            <field name="x_school"/>
+            <field name="x_educational_level"/>
+            <field name="x_date_to"/>
+            <field name="x_name"/>
+          </group>
+          <group>
+            <field name="x_employee_id"/>
+            <field name="x_honors_received"/>
+            <field name="x_date_from"/>
+            <field name="x_year_graduated"/>
+          </group>
+        </group>
+        <group>
+          <separator/>
+        </group>
+      </sheet>
+    </form>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_highest_level']" position="before">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_school']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_school']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_name']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_name']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_date_from']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_date_from']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_date_to']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_employee_id']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_highest_level']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_highest_level']" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_year_graduated']" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level']" position="after">
+    <field name="x_doctoral_degree"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_doctoral_degree']" position="attributes">
+    <attribute name="invisible">x_educational_level not in ["doctoral_undergraduate", "doctoral_degree"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_doctoral_degree']" position="attributes">
+    <attribute name="required">x_educational_level in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/list[1]" position="attributes">
+    <attribute name="editable"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_doctoral_degree']" position="attributes">
+    <attribute name="widget">radio_button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_doctoral_degree']" position="attributes">
+    <attribute name="options">{"horizontal":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_doctoral_degree']" position="attributes">
+    <attribute name="widget">radio</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[3]/field[2]" position="after">
+    <field name="x_others_doctoral_degree"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[3]" position="attributes">
+    <attribute name="invisible">x_educational_attainment not in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[3]" position="attributes">
+    <attribute name="required">not x_doctoral_degree and x_educational_attainment in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="required">x_educational_attainment in ["doctoral_degree", "doctoral_undergraduate"] and not x_others_doctoral_degree</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="required">x_educational_attainment in ["doctoral_degree", "doctoral_undergraduate"]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[3]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level']" position="attributes">
+    <attribute name="class">o_focus</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level'][contains(@class,'o_focus')]" position="attributes">
+    <attribute name="class"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/form[1]//field[@name='x_educational_level']" position="attributes">
+    <attribute name="default_focus">1</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[5]" position="after">
+    <field name="x_residential_manila_district_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="invisible">x_residential_province_id in [340]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="invisible">x_residential_province_id not in [340]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[6]" position="after">
+    <field name="x_permanent_manila_district_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[7]" position="attributes">
+    <attribute name="invisible">x_residential_province_id not in [340]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[7]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[7]" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='hr_settings']/group[@name='studio_group_766e5c']/group[@name='eligibility_x']/field[@name='x_eligibility_id']" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_date_of_promotion']" position="after">
+    <field name="x_change_button" widget="boolean_toggle"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]" position="attributes">
+    <attribute name="invisible">1</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_change_button']" position="replace"/>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="string">Position Title</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">x_change_button != False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button != False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[13]/group[1]/group[4]/field[3]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[10]" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[10]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[7]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[8]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[6]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[5]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="options">{"no_create":true,"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="options">{"no_create":true,"no_open":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="options">{"no_create":true,"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="invisible">False</attribute>
+    <attribute name="column_invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[7]" position="attributes">
+    <attribute name="invisible">x_permanent_province_id not in [340]</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[10]" position="after">
+    <field name="user_partner_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[11]" position="replace"/>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[@name='studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9']/field[1]" position="attributes">
+    <attribute name="groups">hr.group_hr_manager</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[@name='studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9']/field[1]" position="attributes">
+    <attribute name="groups">hr.group_hr_manager,hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[@name='studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9']/field[1]" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  <button name="action_open_contract" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </button>
+  <button name="481" position="attributes">
+    <attribute name="string">Signature Request (PDS)</attribute>
+    <attribute name="invisible">True</attribute>
+  </button>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[3]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[6]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[4]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[7]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[7]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[4]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[8]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[5]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[4]" position="after">
+    <field name="x_sign_request_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="widget">many2many_tags</attribute>
+  </xpath>
+  <!--<xpath expr="//div[hasclass('oe_button_box')][not(ancestor::field)]" position="inside">-->
+  <xpath expr="//div[@name='button_box']/button[1]" position="before">
+    <button class="oe_stat_button" icon="fa-file-text-o" type="action" name="studio_customization.my_pds_9d2db623-0486-400c-b2e9-85881bee765d" invisible="x_x_employee_id_sign_request_count == 0">
+      <field widget="statinfo" name="x_x_employee_id_sign_request_count" string="My PDS"/>
+    </button>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[11]" position="attributes">
+    <attribute name="invisible">x_x_employee_id_sign_request_count == 0</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="invisible">x_change_button == True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]//field[@name='x_employee_id']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="options">{"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">not x_change_button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]//field[@name='x_date_from']" position="attributes">
+    <attribute name="widget">date</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]//field[@name='x_date_to']" position="attributes">
+    <attribute name="invisible">False</attribute>
+    <attribute name="column_invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[11]" position="after">
+    <field name="x_question_employee_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[12]" position="replace"/>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[8]" position="after">
+    <field name="x_question_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[9]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[10]" position="attributes">
+    <attribute name="groups">__custom__.group.administration.developer</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[10]" position="attributes">
+    <attribute name="groups"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[11]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]/group[1]" position="after">
+    <field name="x_question_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]/field[1]" position="inside">
+    <list string="Questions">
+      <field name="x_name"/>
+      <field name="x_question_34_a" optional="show"/>
+      <field name="create_uid" optional="show"/>
+      <field name="create_date" optional="show"/>
+    </list>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]/field[1]/list[1]//field[@name='x_question_34_a']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[9]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]" position="inside">
+    <page string="New Page" name="studio_page_4jd_1itf1aiah">
+      <group name="studio_group_4jd">
+        <group name="studio_group_4jd_left"/>
+        <group name="studio_group_4jd_right"/>
+      </group>
+    </page>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[3]/group[1]" position="after">
+    <field name="x_reference_ids"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[3]" position="attributes">
+    <attribute name="string">REFERENCES (Person not related by consanguinity or affinity to applicant /appointee)</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]" position="attributes">
+    <attribute name="string">I. PERSONAL INFORMATION</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[3]" position="attributes">
+    <attribute name="string">II. FAMILY BACKGROUND</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]" position="attributes">
+    <attribute name="string">III. EDUCATIONAL BACKGROUND</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]" position="attributes">
+    <attribute name="string">IV. CIVIL SERVICE ELIGIBILITY</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]" position="attributes">
+    <attribute name="string">V. WORK EXPERIENCE</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]" position="attributes">
+    <attribute name="string">VI. VOLUNTARY WORK</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]" position="attributes">
+    <attribute name="string">VII. L&amp;D / TRAINING PROGRAMS</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[1]" position="attributes">
+    <attribute name="string">VII. OTHER INFORMATION</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[2]/page[1]" position="attributes">
+    <attribute name="string">VIII. OTHER INFORMATION</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[10]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="before">
+    <field name="x_rating_year"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="options">{"enable_formatting":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[10]" position="after">
+    <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[6]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]" position="attributes">
+    <attribute name="duplicate">false</attribute>
+  </xpath>
+  <xpath expr="/form[1]" position="attributes">
+    <attribute name="duplicate"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[12]" position="attributes">
+    <attribute name="widget">boolean_favorite</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">oe_star_button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">oe_favourite_button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">oe_favourite</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">fa fa-favourite</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">fa fa-favourite button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[8]" position="attributes">
+    <attribute name="class">oe_favourite_button</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[12]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[3]" position="after">
+    <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[12]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[8]" position="after">
+    <xpath expr="/form[1]/sheet[1]/group[1]/group[1]/field[4]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[9]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+    <attribute name="string">Nominated</attribute>
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[9]" position="after">
+    <field name="x_personnel_ratings_scale"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[5]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[1]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[1]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button == True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="invisible">x_change_button == True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="invisible">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">x_change_button != True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[2]" position="attributes">
+    <attribute name="context"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="open_form_view">true</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="open_form_view">false</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[8]" position="after">
+    <field name="currency_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[9]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[10]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[2]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">remaining_days</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">date</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">daterange</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">date</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">daterange</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="widget">date</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false,"min_precision":"months"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false,"max_date":"\"today\""}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[4]" position="attributes">
+    <attribute name="options">{"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/list[1]/field[5]" position="attributes">
+    <attribute name="options">{"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="options">{"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/list[1]/field[5]" position="attributes">
+    <attribute name="string">Date from</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[4]/field[1]/list[1]/field[6]" position="attributes">
+    <attribute name="string">Date to</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[2]" position="attributes">
+    <attribute name="string">Date from</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="string">Date to</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="options">{"show_time":false,"warn_future":false,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]/field[2]" position="attributes">
+    <attribute name="options">{"show_time":false,"warn_future":true,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="string">Date from</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]/field[1]/list[1]/field[4]" position="attributes">
+    <attribute name="string">Date to</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[3]" position="attributes">
+    <attribute name="string">Date from</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]/field[4]" position="attributes">
+    <attribute name="string">Date to</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="options">{"warn_future":true,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[3]" position="attributes">
+    <attribute name="options">{"warn_future":true,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[1]/group[1]/group[1]/field[2]" position="attributes">
+    <attribute name="options">{"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[3]/group[1]/group[2]/field[1]/list[1]/field[5]" position="attributes">
+    <attribute name="options">{"warn_future":true,"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[3]/group[1]/group[2]/field[1]" position="inside">
+    <form>
+      <sheet string="Children's Information">
+        <group>
+          <group>
+            <field name="x_employee_id"/>
+            <field name="x_middlename"/>
+            <field name="x_name"/>
+          </group>
+          <group>
+            <field name="x_lastname"/>
+            <field name="x_birthday"/>
+          </group>
+        </group>
+        <group>
+          <separator/>
+        </group>
+      </sheet>
+    </form>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[3]/group[1]/group[2]/field[1]/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="options">{"max_date":"today"}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="string">Show-Ord No-Item No</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[3]" position="after">
+    <field name="x_item_no"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[4]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[5]" position="after">
+    <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[1]/field[4]" position="move"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[2]/field[5]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="editable">top</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order">x_date_from desc</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="editable">bottom</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[10]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order">x_date_from asc</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[6]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order">x_date_from desc</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[10]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order">x_date_from desc</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]/group[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[7]/field[1]/list[1]" position="attributes">
+    <attribute name="default_order">x_date_from_2 desc</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[1]/field[4]" position="attributes">
+    <attribute name="options">{"no_create":true,"no_open":false}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[11]" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[11]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[1]" position="attributes">
+    <attribute name="options">{"no_open":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[5]/field[1]/form[1]/sheet[1]/group[1]/group[1]/field[1]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[1]/group[3]/field[1]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="//div[hasclass('oe_button_box')][not(ancestor::field)]" position="inside">
+    <button class="oe_stat_button" icon="fa-black-tie" type="action" name="studio_customization.plantilla_item_f256c125-2106-43bd-ab8e-1ee3d8c50ac4">
+      <field widget="statinfo" name="x_item_no" string="Plantilla Item No."/>
+    </button>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[2]/group[1]/group[2]/field[8]" position="attributes">
+    <attribute name="options">{"no_open":true,"no_create":true}</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="before">
+    <field name="pin" string="Employee No."/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[1]" position="attributes">
+    <attribute name="string">Employee No.</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[1]" position="after">
+    <field name="x_employee_number_badge_id"/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="widget">boolean_toggle</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[11]" position="attributes">
+    <attribute name="string">ATTENDANCES</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="after">
+    <field name="x_employee_pin"/>
+    <field name="x_agency_employee_no" string="Employee No."/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="string">Employee No.</attribute>
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[1]" position="before">
+    <field name="x_agency_employee_no" string="Employee No."/>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="string">Employee Pin</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">0</attribute>
+    <attribute name="readonly">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/group[1]/group[2]/field[2]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[1]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="string">Employee Pin</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/notebook[1]/page[14]/group[2]/group[2]/field[2]" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="readonly">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[5]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[17]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="/form[1]/sheet[1]/div[1]/button[18]" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+</data>
