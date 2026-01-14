@@ -1,0 +1,179 @@
+<data>
+  <xpath expr="//button[@name='157']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//button[@name='action_related_contacts']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+
+  <xpath expr="//field[@name='parent_id']" position="attributes">
+    <attribute name="invisible">"1"</attribute>
+    <attribute name="string">Immediate Supervisor</attribute>
+  </xpath>
+  <xpath expr="//field[@name=&quot;parent_id&quot;]" position="after">
+    <field name="x_individual_rating" invisible="True"/>
+    <field name="x_is_nominated" invisible="True"/>
+  </xpath>
+  
+  <xpath expr="//page[@name='personal_info']" position="attributes">
+    <attribute name="groups">hr.group_hr_user,hr.group_hr_manager</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='birthday']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='birthday']" position="after">
+    <field name="x_age"/>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='place_of_birth']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='sex']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_dummy']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='marital']" position="attributes">
+    <attribute name="default">False</attribute>
+    <attribute name="invisible">True</attribute>
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='spouse_complete_name']" position="attributes">
+    <attribute name="invisible">1</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='personal_info']/group[1]/group[1]/field[@name='spouse_birthdate']" position="attributes">
+    <attribute name="invisible">1</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_height']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_weight']" position="attributes">
+    <attribute name="required">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_blood_type']" position="attributes">
+    <attribute name="required">False</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]" position="after">
+    <notebook name="studio_notebook_61k_1i8n3et9b">
+      <page string="OTHER INFORMATION" name="studio_page_1pm_1i8n3jmit" groups="hr.group_hr_user">
+        <field name="x_other_informations_ids">
+          <list string="Other Information" editable="bottom">
+            <field name="x_employee_id" optional="show" options="{&quot;no_open&quot;:false}" column_invisible="True"/>
+            <field name="x_name"/>
+            <field name="x_non_academic_recognition" optional="show"/>
+            <field name="x_memberships" optional="show"/>
+          </list>
+        </field>
+      </page>
+      <page string="QUESTIONS" name="studio_page_306_1i8n3oaon" groups="hr.group_hr_user">
+                <field name="x_question_id">
+                    <list string="Questionnaires" editable="bottom">
+                        <field name="x_employee_id" string="Employee"/>
+                        <field name="create_date" string="Date"/>
+                        <field name="create_uid" string="Log by"/>
+                    </list>
+                </field>
+      </page>
+        <page string="REFERENCES (Person not related by consanguinity or affinity to applicant /appointee)" name="studio_page_4jd_1itf1aiah">
+            <field name="x_reference_ids">
+                <list string="References" editable="bottom">
+                    <field name="x_employee_id" optional="show" column_invisible="True" can_create="True" can_write="True"/>
+                    <field name="x_name"/>
+                    <field name="x_address" optional="show"/>
+                    <field name="x_tel_no" optional="show" string="Tel. No."/>
+                </list>
+            </field>
+      </page>
+    </notebook>
+  </xpath>
+  <xpath expr="//page[@name='address_contact']" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  
+  <xpath expr="//page[@name='education']" position="attributes">
+    <attribute name="groups">hr.group_hr_manager,hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="//page[@name='eligibility']" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="//page[@name='ratings']" position="attributes">
+    <attribute name="groups">hr.group_hr_user</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='ratings']/field[@name='x_personnel_ratings_id']/list[1]" position="attributes">
+    <attribute name="editable">top</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_start_date']" position="attributes">
+    <attribute name="options">{"related_end_date":"x_end_date","end_date_field":"x_end_date","show_time":false}</attribute>
+    <attribute name="string">Inclusive Dates</attribute>
+    <attribute name="widget">daterange</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_end_date']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_start_date_2']" position="attributes">
+    <attribute name="options">{"related_end_date":"x_end_date_2","end_date_field":"x_end_date_2","show_time":false}</attribute>
+    <attribute name="string">Inclusive Dates</attribute>
+    <attribute name="widget">daterange</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_end_date_2']" position="attributes">
+    <attribute name="column_invisible">True</attribute>
+  </xpath>
+  <xpath expr="//page[@name='personal_information']" position="attributes">
+    <attribute name="string">Personal Information</attribute>
+  </xpath>
+  <xpath expr="//page[@name='hr_settings']" position="attributes">
+    <attribute name="groups">hr.group_hr_manager,hr.group_hr_user</attribute>
+    <attribute name="string">PLANTILLA OF PERSONNEL</attribute>
+  </xpath>
+  <xpath expr="//page[@name='hr_settings']/group[@name='settings_group']" position="before">
+    <group name="studio_group_766e5c" groups="hr.group_hr_user">
+      <group string="Plantilla Details" name="studio_group_d669cd">
+        <field name="currency_id" invisible="True"/>
+        <field name="department_id" readonly="True" options="{&quot;no_open&quot;:true}"/>
+        <field name="job_id" domain="['&amp;', ('employee_ids', '=', False), ('department_id', '=', department_id)]" readonly="True" options="{&quot;no_open&quot;:true}" invisible="True"/>
+        <field name="x_position_title" readonly="True" options="{&quot;no_open&quot;:true}" string="Position Title"/>
+        <field name="x_salary_grade_table_id" options="{&quot;no_open&quot;:true,&quot;no_create&quot;:true}"/>
+        <field name="x_step"/>
+        <field name="x_monthly_salary" string="Actual Monthly Salary"/>
+        <field name="x_annual_salary" string="Authorized Annual Salary"/>
+      </group>
+      <group string="Date of Appointment/Promotion" name="studio_group_589930">
+        <field name="x_date_of_appointment" options="{&quot;warn_future&quot;:true}" string="Date of Original Appointment"/>
+        <field name="x_date_of_promotion" options="{&quot;warn_future&quot;:true}" string="Date of Last Promotion/Appointment"/>
+        
+        <field name="x_years_service" string="Years in Service"/>
+      </group>
+      <group string="Civil Service Eligibility" name="eligibility_x">
+        <field name="x_eligibility_id"/>
+        <field name="x_board_bar_eligibility" widget="radio" invisible="x_eligibility_id != 14"/>
+        <field name="x_eligibility_remarks" invisible="x_eligibility_id != 14"/>
+        </group>
+        <group string="Educational Background">
+            <field name="x_educational_attainment" string="Highest Educational Attainment"/>
+            <field name="x_doctoral_degree" widget="radio"/>
+        </group>
+    </group>
+    
+  </xpath>
+  <xpath expr="//group[@name='identification_group']" position="attributes">
+    <attribute name="string">Attendance/Badge ID (Emp No)</attribute>
+  </xpath>
+  <xpath expr="//div[contains(@class,'oe_button_box')][not(ancestor::field)]/button[@name='action_open_goals']" position="before">
+      <button class="oe_stat_button" icon="fa-server" type="action" name="studio_customization.service_record_39676137-4c0f-4655-bba9-62565180600d">
+      <field widget="statinfo" name="x_employee_id_hr_resume_line_count" string="Service Record"/>
+    </button>
+  </xpath>
+   <xpath expr="//div[contains(@class,'oe_button_box')][not(ancestor::field)]/button[@name='studio_customization.service_record_39676137-4c0f-4655-bba9-62565180600d']" position="before">
+    <button invisible="x_individual_rating &gt;= 5" class="oe_stat_button" icon="fa-star" type="action" name="studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9">
+        <field name="x_individual_rating" widget="statinfo" string="Last Average Rating"/>
+    </button>
+    <button invisible="x_individual_rating &lt; 5" class="oe_stat_button" icon="fa-star text-favourite" type="action" name="studio_customization.individual_rating_359d1651-9f04-4d48-bfa7-83c7e7bd18d9">
+        <field name="x_individual_rating" widget="statinfo" string="Last Average Rating"/>
+    </button>
+    <button class="oe_stat_button" icon="fa-black-tie" type="action" name="studio_customization.plantilla_item_f256c125-2106-43bd-ab8e-1ee3d8c50ac4">
+      <field widget="statinfo" name="x_item_no" string="Plantilla Item No."/>
+    </button>
+  </xpath>
+  
+ 
+</data>
