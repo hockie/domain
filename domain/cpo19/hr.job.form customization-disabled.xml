@@ -1,0 +1,117 @@
+View Name: Odoo Studio: hr.job.form customization
+Inherited View: hr.job.form
+External ID: studio_customization.odoo_studio_hr_job_f_498bcf9d-ddb1-4360-9c8f-ba38a9801603
+
+
+<data>
+  <xpath expr="//field[@name='x_salary_grade']" position="replace">
+    <field name="x_salary_grade_table_id" force_save="1" readonly="x_change_incumbent != True" options="{&quot;no_open&quot;:true,&quot;no_create&quot;:true}"/>
+    <field name="x_step" force_save="1" readonly="x_change_incumbent != True"/>
+    <field name="x_monthly_salary"/>
+    <field name="x_annual_salary"/>
+    <field name="x_change_incumbent" widget="boolean_toggle" string="Update Plantilla" groups="hr.group_hr_user"/>
+    <field name="x_currency_id" invisible="True"/>
+    <field name="x_unique_no" invisible="True"/>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='recruitment_page']/group[1]/group[@name='recruitment']/label[1]" position="replace">
+    <field name="x_alias_name" widget="CopyClipboardChar" readonly="True" string="Email Alias" force_save="1"/>
+  </xpath>
+  <xpath expr="//button[@name='action_job_board_modules']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/div[not(@name)][2]/label[1]" position="attributes">
+    <attribute name="string">Position Title</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/div[not(@name)][2]/h1[1]/field[@name='name']" position="attributes">
+    <attribute name="groups">__custom__.group.administration.developer</attribute>
+    <attribute name="invisible">True</attribute>
+    <attribute name="placeholder">Position Title-Ord No-Item No</attribute>
+  </xpath>
+  <xpath expr="//field[@name='x_position_title']" position="attributes">
+    <attribute name="placeholder">e.g. Administrative Aide I</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='recruitment_page']" position="attributes">
+    <attribute name="string">Plantilla Details</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='recruitment_page']/group[1]/group[@name='recruitment']/field[@name='company_id']" position="after">
+    <field name="x_occupational_service_id" invisible="True"/>
+    <field name="x_occupational_group_id" domain="[('x_occupational_service_id','=',x_occupational_service_id)]" invisible="True"/>
+    <field name="x_ord_no" string="Previous Year (Ord. No.)" force_save="1" readonly="x_change_incumbent != True"/>
+    <field name="x_item_no" string="Current Year (Item No.)" force_save="1" readonly="x_change_incumbent != True"/>
+    <field name="employee_ids" string="Name of Incumbent" widget="many2many_tags" force_save="1" readonly="x_change_incumbent == False" domain="[('job_id','=',False)]" required="False" invisible="True" options="{&quot;no_create&quot;:true}"/>
+    <field name="x_employee_id" invisible="False" force_save="1" readonly="not x_change_incumbent" options="{&quot;no_open&quot;:false,&quot;no_create&quot;:true}" string="Employee" domain="[('job_id','=',False)]"/>
+    <field name="x_is_emp_active" invisible="True"/>
+    <field name="x_firstname" groups="__custom__.group.administration.developer" invisible="True"/>
+    <field name="x_surname" groups="__custom__.group.administration.developer" invisible="True"/>
+  </xpath>
+  <xpath expr="//field[@name='department_id']" position="attributes">
+    <attribute name="force_save">1</attribute>
+    <attribute name="options">{"no_open":false,"no_create":true}</attribute>
+    <attribute name="readonly">x_change_incumbent != True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='address_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='industry_id']" position="attributes">
+    <attribute name="invisible">1</attribute>
+  </xpath>
+  <xpath expr="//field[@name='contract_type_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='skill_ids']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='date_from']" position="attributes">
+    <attribute name="groups">base.group_system</attribute>
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='compensation']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='compensation']" position="after">
+    <field name="no_of_employee" invisible="True"/>
+  </xpath>
+  <xpath expr="//field[@name='user_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='recruitment_page']/group[1]/group[@name='recruitment2']/field[@name='interviewer_ids']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='recruitment_page']/group[1]/group[@name='recruitment2']/div[not(@name)][1]/field[@name='survey_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//field[@name='alias_id']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//div[@name='edit_alias']" position="attributes">
+    <attribute name="invisible">True</attribute>
+  </xpath>
+  <xpath expr="//page[@name='job_description_page']" position="attributes">
+    <attribute name="invisible">False</attribute>
+  </xpath>
+  <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+    <page string="Recruitment" name="studio_page_14t_1int3qlmt">
+      <group name="studio_group_14t">
+        <group name="studio_group_14t_left">
+          <separator string="Qualifications"/>
+          <field name="x_eligibility_id" options="{&quot;no_open&quot;:true,&quot;no_create&quot;:true}"/>
+          <field name="x_educational"/>
+          <field name="x_training"/>
+          <field name="x_work_experience"/>
+          <field name="x_competency"/>
+        </group>
+        <group name="studio_group_14t_right">
+          <separator string="Publications"/>
+          <field name="published_date"/>
+          <field name="x_posting_date"/>
+          <field name="x_closing_date"/>
+        </group>
+        <group name="studio_group_14t_right">
+          <separator string="Interviews"/>
+          <field name="interviewer_ids" widget="many2many_tags_avatar" options="{'no_create': True, 'no_create_edit': True}" position="move"/>
+          <field name="survey_id" position="move"/>
+        </group>
+      </group>
+    </page>
+  </xpath>
+</data>
